@@ -2,9 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title></title>
+  <style>
+    body{
+      background-color: #131212;
+    }
+
+    .box{
+      width: 100px;
+      aspect-ratio: 1/0.5;
+      background-color: #131212;
+      display: inline-block;
+      border-radius: 10px;
+
+    }
+
+    .main{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 750px;
+      margin: auto;
+      justify-content: center;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    div{
+      display: flex;
+      gap: 5px;
+      width: 100%;
+    }
+    section div:nth-child(2){
+      justify-content: center;
+      margin: 2px 0;
+      border-top: 2px solid #ffffff;
+      border-bottom: 2px solid #ffffff;
+      padding: 4px 0;
+    }
+    section div:nth-child(1){
+      justify-content: flex-start;
+      margin-bottom: 4px;
+    }
+    section div:nth-child(3) {
+      justify-content: flex-end;
+      margin-top: 2px;
+    }
+    /*  #red{
+          background-color: red;
+      }
+      #green{
+          background-color: green;
+      }
+      #blue{
+          background-color: blue;
+      }
+      #yellow{
+          background-color: yellow;
+      }
+      #lightpink{
+          background-color: lightpink;
+      }
+      #purple{
+          background-color: plum;
+      }*/
+  </style>
+
+
 </head>
 <body>
-$END$
+<section class="main">
+  <div><span id="red" class="box"></span></div>
+  <div>
+    <span id="green" class="box"></span>
+    <span id="blue" class="box"></span>
+    <span id="yellow" class="box"></span>
+    <span id="lightpink" class="box"></span>
+  </div>
+  <div><span id="purple" class="box"></span></div>
+</section>
+
+
+<script>
+  let color = ["red", "green", "blue", "yellow", "hotpink", "purple"];
+  const boxes=document.querySelectorAll(".box")
+  console.log(boxes)
+
+  setInterval(() => {
+    let last = color.pop();
+    color.unshift(last);
+
+    for (let i = 0; i < boxes.length; i++) {
+      boxes[i].style.backgroundColor=color[i]
+    }
+  },2000)
+  /* setInterval(() => {
+
+       let last = color.pop();
+       color.unshift(last);
+
+       document.getElementById("red").style.backgroundColor = color[0];
+       document.getElementById("green").style.backgroundColor = color[1];
+       document.getElementById("blue").style.backgroundColor = color[2];
+       document.getElementById("yellow").style.backgroundColor = color[3];
+       document.getElementById("lightpink").style.backgroundColor = color[4];
+       document.getElementById("purple").style.backgroundColor = color[5];
+
+       console.log(color)
+
+   },3000);*/
+</script>
+
 </body>
-</html>
+</html>yy
